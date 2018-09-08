@@ -12,77 +12,9 @@ namespace TextBasedGame
         East ,
         West
     };
-    class Tile
-    {
-        public  string Description = "This is a tile.";
-        public string NoAccessDescription = "You cannot go this way.";
-        public  bool Accessible = false;
-        public int x;
-        public int y;
-        
+   
 
-    }
-
-    class Player
-    {
-        public String Name = "Player 1";
-        public int LocX  = 10;
-        public int LocY  = 5;
-
-        // checks accessibility of target location and changes location if accessible
-        public void Move(Direction _dir , Tile[ , ] _map)
-        {
-            
-            if (_dir == Direction.North)
-            {
-                if (_map[LocX - 1, LocY].Accessible == true)
-                {
-                    LocX -= 1;
-                }
-                else
-                {
-                    Console.WriteLine(_map[LocX , LocY].NoAccessDescription);
-                }
-               
-                
-
-            }else if (_dir == Direction.East)
-            {
-                if (_map[LocX , LocY + 1].Accessible == true)
-                {
-                    LocY += 1;
-                }
-                else
-                {
-                    Console.WriteLine(_map[LocX, LocY].NoAccessDescription);
-                }
-
-            }
-            else if (_dir == Direction.West)
-            {
-                if (_map[LocX , LocY - 1].Accessible == true)
-                {
-                    LocY -= 1;
-                }
-                else
-                {
-                    Console.WriteLine(_map[LocX, LocY].NoAccessDescription);
-                }
-
-            }
-            else if (_dir == Direction.South)
-            {
-                if (_map[LocX + 1, LocY].Accessible == true)
-                {
-                    LocX += 1;
-                }
-                else
-                {
-                    Console.WriteLine(_map[LocX, LocY].NoAccessDescription);
-                }
-            }
-        }
-    }
+   
    
 
 
@@ -206,7 +138,7 @@ namespace TextBasedGame
             }
         }
         // asks player for input for a direction to move. runs the move method of player 
-        public static void GetPlayerDirection(Player _player , Tile[] _map)
+        public static void GetPlayerDirection(Player _player , Tile[,] _map)
         {
         start:
             string direction;
