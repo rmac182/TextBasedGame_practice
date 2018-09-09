@@ -147,23 +147,43 @@ namespace TextBasedGame
 
             if (direction == "n")
             {
-                _player.Move(Direction.North , _map[_player.LocX , _player.LocY] );
+                _player.Move(Direction.North , _map );
+                Console.WriteLine("player location: " + _player.LocX + " " + _player.LocY);
+                Console.WriteLine();
+                PrintMap(12 , 12, _map , _player);
+                goto start;
             }
             else if (direction == "s")
             {
-                _player.Move(Direction.South);
+                _player.Move(Direction.South, _map);
+                Console.WriteLine("player location: " + _player.LocX + " " + _player.LocY);
+                Console.WriteLine();
+                PrintMap(12, 12, _map, _player);
+                goto start;
+                
             }
             else if (direction == "e")
             {
-                _player.Move(Direction.East);
+                _player.Move(Direction.East, _map);
+                Console.WriteLine("player location: " + _player.LocX + " " + _player.LocY);
+                Console.WriteLine();
+                PrintMap(12, 12, _map, _player);
+                goto start;
             }
             else if (direction == "w")
             {
-                _player.Move(Direction.West);
+                _player.Move(Direction.West, _map);
+                Console.WriteLine("player location: " + _player.LocX + " " + _player.LocY);
+                Console.WriteLine();
+                PrintMap(12, 12, _map, _player);
+                goto start;
             }
             else
             {
                 Console.WriteLine("Invalid Entry");
+                Console.WriteLine("player location is still: " + _player.LocX + " " + _player.LocY);
+                Console.WriteLine();
+                PrintMap(12, 12, _map, _player);
                 goto start;
             }
         }
